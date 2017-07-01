@@ -5,6 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountantWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="Accountant" Height="403.693" Width="522.017">
+    <Grid>
+        <TabControl x:Name="TabPanel" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="2,23,2,2">
+            <TabItem Header="Bankroll">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="History" IsEnabled="false">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,0,0">
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu HorizontalAlignment="Stretch" Height="18" VerticalAlignment="Top" Width="auto">
+            <MenuItem Header="File" IsEnabled="false"/>
+            <MenuItem Header="Tools" IsEnabled="false"/>
+            <MenuItem Header="Help" IsEnabled="false"/>
+        </Menu>
+    </Grid>
 </Window>
