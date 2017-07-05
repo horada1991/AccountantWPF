@@ -15,23 +15,23 @@ namespace DALayer.DAO.Implementation
         //private readonly XmlSerializer serializerSingle = new XmlSerializer(typeof(User));
         private readonly XmlSerializer _serializerList = new XmlSerializer(typeof(List<User>));
         private FileStream _fileStream;
-        private List<User> userList;
+        private List<User> _userList;
 
         public void Save(User user)
         {
-            userList = GetAllUser();
-            if (userList.Count > 0 && userList.Find(t => t.UserName.Equals(user.UserName)) != null)
+            _userList = GetAllUser();
+            if (_userList.Count > 0 && _userList.Find(t => t.UserName.Equals(user.UserName)) != null)
             {
                 Debug.WriteLine($"UserName ({user.UserName}) is already in use.. was not saved");
                 return;
             }
-            userList.Add(user);
+            _userList.Add(user);
             _fileStream = new FileStream(Path.Combine(Setting.DataFolderPath, "users.xml"), FileMode.OpenOrCreate, FileAccess.Write);
-            _serializerList.Serialize(_fileStream, userList);
+            _serializerList.Serialize(_fileStream, _userList);
             _fileStream.Close();
         }
 
-        private List<User> GetAllUser()
+        public List<User> GetAllUser()
         {
             try
             {
@@ -45,6 +45,14 @@ namespace DALayer.DAO.Implementation
             List<User> toReturn = (List<User>)_serializerList.Deserialize(_fileStream);
             _fileStream.Close();
             return toReturn;
+        }
+
+        public User GetUserByUserName()
+        {
+            User user = new User();
+
+
+            return user;
         }
     }
 }

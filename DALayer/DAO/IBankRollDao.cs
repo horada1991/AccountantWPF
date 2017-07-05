@@ -7,10 +7,10 @@ using DALayer.Model;
 
 namespace DALayer.DAO
 {
-    public interface IUserDao
+    interface IBankRollDao
     {
-        void Save(User user);
-        User GetUserByUserName();
-        List<User> GetAllUser();
+        void Save(BankRoll bankRoll);
+        BankRoll GetBankRollById();
+        List<BankRoll> GetAllBankRolls();
     }
 }

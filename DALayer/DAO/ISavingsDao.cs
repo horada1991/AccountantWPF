@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DALayer.Model;
 
 namespace DALayer.DAO
 {
-    public interface IUserDao
+    interface ISavingsDao
     {
-        void Save(User user);
-        User GetUserByUserName();
-        List<User> GetAllUser();
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALayer
+namespace DALayer.DAO
 {
-    class Main
+    interface IIncomeTypeDao
     {
     }
 }

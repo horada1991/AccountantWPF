@@ -93,5 +93,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DALayer\DALayer.csproj">
+      <Project>{e4c18a8d-8fb0-4f21-8785-9b5f8bc20d45}</Project>
+      <Name>DALayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{799178b9-62f6-4802-bf23-3f945d324b0e}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST Data MKDIR Data</PostBuildEvent>
+  </PropertyGroup>
 </Project>

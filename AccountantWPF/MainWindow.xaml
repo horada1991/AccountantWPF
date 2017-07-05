@@ -9,7 +9,10 @@
     <Grid>
         <TabControl x:Name="TabPanel" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="2,23,2,2">
             <TabItem Header="Bankroll">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="UserNameTB" HorizontalAlignment="Left" Height="23" Margin="87,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="UserName"/>
+                    <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="105,77,0,0" Click="Save_Click"/>
+                </Grid>
             </TabItem>
             <TabItem Header="History" IsEnabled="false">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,0,0">
