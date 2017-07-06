@@ -10,6 +10,8 @@ namespace DALayer.Model
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public bool SavingsInPercentage { get; set; }
+        public decimal SavingsInDiscreteAmount { get; set; }
         public double PercentageToSave { get; set; }
         public bool HasStopLimit { get; set; }
         public decimal StopLimit { get; set; }
