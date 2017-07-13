@@ -23,18 +23,27 @@ namespace AccountantWPF
     public partial class MainWindow : Window
     {
         private DALayer.DAO.IUserDao _userDao = new DALayer.DAO.Implementation.UserDaoXml();
+        private SessionStorage _sessionStorage = new SessionStorage();
+        private readonly Login _loginWindow = new Login();
+
         public MainWindow()
         {
+            OpenLoginWindowIfNecessary();
+            
             InitializeComponent();
+        }
+
+        private void OpenLoginWindowIfNecessary()
+        {
+            if (_sessionStorage.User == null)
+            {
+                this.Hide();
+                _loginWindow.Show();
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            IncomeType payment = new IncomeType {Id = Guid.NewGuid(),Name = "payment"};
-            Savings savings = new Savings() {Id = Guid.NewGuid(), Name = "Hosszutav",CutFromIncomeTypes = new List<IncomeType>{payment},HasStopLimit = false,IsEmergencySavings = false,PercentageToSave = 0.1d};
-            BankRoll bankRoll = new BankRoll(){Id = Guid.NewGuid(),ActualMoney = 0,LuxurySavings = 0,Name = "testBankRoll",IncomeTypes = new List<IncomeType>{payment},SavingsList = new List<Savings>{savings}};
-            List<BankRoll> bankRolls = new List<BankRoll> {bankRoll};
-            _userDao.Save(new User{TimeCreated = DateTime.Now, UserName = UserNameTB.Text,BankRollList = bankRolls,Id = Guid.NewGuid()});
         }
     }
 }
