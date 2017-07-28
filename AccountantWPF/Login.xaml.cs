@@ -19,7 +19,7 @@ namespace AccountantWPF
     /// </summary>
     public partial class Login : Window
     {
-        private bool _userNameInputTB_GotFocus = false;
+        private bool _userNameInputTbGotFocus = false;
 
         public Login()
         {
@@ -28,10 +28,10 @@ namespace AccountantWPF
 
         private void UserNameInputTB_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!_userNameInputTB_GotFocus)
+            if (!_userNameInputTbGotFocus)
             {
                 UserNameInputTB.Text = "";
-                _userNameInputTB_GotFocus = true;
+                _userNameInputTbGotFocus = true;
             }
         }
     }

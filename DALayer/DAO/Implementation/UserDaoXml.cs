@@ -47,12 +47,9 @@ namespace DALayer.DAO.Implementation
             return toReturn;
         }
 
-        public User GetUserByUserName()
+        public User GetUserByUserName(string userName)
         {
-            User user = new User();
-
-
-            return user;
+            return GetAllUser().Find(u => u.UserName.Equals(userName));
         }
     }
 }

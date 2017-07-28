@@ -11,6 +11,6 @@ namespace DALayer.DAO
     {
         void Save(User user);
         User GetUserByUserName();
-        List<User> GetAllUser();
+        List<User> GetAllUser(string userName);
     }
 }
