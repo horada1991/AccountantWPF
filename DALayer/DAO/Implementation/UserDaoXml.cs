@@ -47,6 +47,21 @@ namespace DALayer.DAO.Implementation
             return toReturn;
         }
 
+        public User Registrate(string userName)
+        {
+            if (GetUserByUserName(userName) != null) return null;
+            User user = new User()
+            {
+                BankRollList = new List<BankRoll>(),
+                Id = Guid.NewGuid(),
+                TimeCreated = DateTime.Now,
+                UserName = userName
+            };
+            Save(user);
+
+            return GetUserByUserName(userName);
+        }
+
         public User GetUserByUserName(string userName)
         {
             return GetAllUser().Find(u => u.UserName.Equals(userName));

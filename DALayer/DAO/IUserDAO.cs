@@ -10,7 +10,8 @@ namespace DALayer.DAO
     public interface IUserDao
     {
         void Save(User user);
-        User GetUserByUserName();
-        List<User> GetAllUser(string userName);
+        User GetUserByUserName(string userName);
+        List<User> GetAllUser();
+        User Registrate(string userName);
     }
 }

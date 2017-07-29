@@ -9,6 +9,13 @@ namespace AccountantWPF
 {
     public class SessionStorage
     {
+        private static SessionStorage instance;
+
+        private SessionStorage() { }
+
+        public static SessionStorage Instance => instance ?? (instance = new SessionStorage());
+
+
         public User User { get; set; }  
     }
 }

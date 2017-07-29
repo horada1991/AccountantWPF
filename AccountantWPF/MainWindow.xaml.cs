@@ -23,8 +23,8 @@ namespace AccountantWPF
     public partial class MainWindow : Window
     {
         private DALayer.DAO.IUserDao _userDao = new DALayer.DAO.Implementation.UserDaoXml();
-        private SessionStorage _sessionStorage = new SessionStorage();
-        private readonly Login _loginWindow = new Login();
+        private SessionStorage _sessionStorage = SessionStorage.Instance;
+        private Login _loginWindow;
 
         public MainWindow()
         {
@@ -38,6 +38,7 @@ namespace AccountantWPF
             if (_sessionStorage.User == null)
             {
                 this.Hide();
+                _loginWindow = new Login(this);
                 _loginWindow.Show();
             }
         }

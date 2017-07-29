@@ -8,7 +8,8 @@
         Title="Login" Height="207.237" Width="143.092">
     <Grid>
         <TextBox  x:Name="UserNameInputTB" HorizontalAlignment="Center" Height="23" Margin="10,40,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Text="UserName" FontStyle="Italic" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" GotFocus="UserNameInputTB_GotFocus"/>
-        <Button x:Name="SaveUserBtn" Content="Enter" HorizontalAlignment="Left" Margin="29,79,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="LoginUserBtn" Content="Enter" HorizontalAlignment="Left" Margin="29,79,0,0" VerticalAlignment="Top" Width="74" Click="LoginUserBtn_Click"/>
+        <Label x:Name="infoMessageLabel" Content="" HorizontalAlignment="Left" Margin="29,104,0,0" VerticalAlignment="Top" Width="74" Height="18" FontSize="6" HorizontalContentAlignment="Center" Foreground="Red"/>
 
     </Grid>
 </Window>

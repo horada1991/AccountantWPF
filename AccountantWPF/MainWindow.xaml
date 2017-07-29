@@ -12,6 +12,9 @@
                 <Grid Background="#FFE5E5E5">
                     <TextBox x:Name="UserNameTB" HorizontalAlignment="Left" Height="23" Margin="87,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="UserName"/>
                     <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="105,77,0,0" Click="Save_Click"/>
+                    <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="271,52,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Label2" Content="Label" HorizontalAlignment="Left" Margin="271,97,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Label3" Content="Label" HorizontalAlignment="Left" Margin="271,139,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="History" IsEnabled="false">
