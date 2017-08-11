@@ -1,0 +1,29 @@
+﻿<Window x:Class="AccountantMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountantMVVM"
+        mc:Ignorable="d"
+        Title="Accountant" Height="350" Width="525">
+    <Grid>
+        <TabControl x:Name="TabPanel" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="2,23,2,2">
+            <TabItem Header="Bankroll">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="271,52,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Label2" Content="Label" HorizontalAlignment="Left" Margin="271,97,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Label3" Content="Label" HorizontalAlignment="Left" Margin="271,139,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="History" IsEnabled="false">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,0,0">
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu HorizontalAlignment="Stretch" Height="18" VerticalAlignment="Top" Width="auto">
+            <MenuItem Header="File" IsEnabled="false"/>
+            <MenuItem Header="Tools" IsEnabled="false"/>
+            <MenuItem Header="Help" IsEnabled="false"/>
+        </Menu>
+    </Grid>
+</Window>
