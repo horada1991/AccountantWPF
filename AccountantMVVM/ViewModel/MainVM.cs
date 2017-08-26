@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using AccountantMVVM.Helpers;
 using DALayer.Model;
 
 namespace AccountantMVVM.ViewModel
 {
-    public class UserVm : PropertyChangeHelper
+    public class MainVM : PropertyChangeHelper
     {
         private User _user = new User();
 
-        public string Login_UserNameTb
+        public User ActualUser
         {
-            get => _user.UserName;
+            get => _user;
             set
             {
-                _user.UserName = value;
+                _user = value;
+                OnPropertyChanged("ActualUser");
             }
         }
-
-        // TODO look for ICOMMAND in TestCreator!
     }
 }

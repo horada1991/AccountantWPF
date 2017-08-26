@@ -54,12 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\CommandHandler.cs" />
     <Compile Include="Helpers\PropertyChangeHelper.cs" />
+    <Compile Include="Helpers\ResponseHelper.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SessionStorage.cs" />
-    <Compile Include="ViewModel\UserVm.cs" />
+    <Compile Include="Service\Repository.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,4 +114,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST Data MKDIR Data</PostBuildEvent>
+  </PropertyGroup>
 </Project>

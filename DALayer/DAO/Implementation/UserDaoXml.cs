@@ -37,9 +37,9 @@ namespace DALayer.DAO.Implementation
             {
                 _fileStream = new FileStream(Path.Combine(Setting.DataFolderPath, "users.xml"), FileMode.Open, FileAccess.Read);
             }
-            catch (FileNotFoundException e)
+            catch (IOException ex)
             {
-                Debug.WriteLine(e);
+                Debug.WriteLine(ex);
                 return new List<User>();
             }
             List<User> toReturn = (List<User>)_serializerList.Deserialize(_fileStream);

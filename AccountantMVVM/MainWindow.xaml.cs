@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AccountantMVVM.ViewModel;
+using DALayer.Model;
 
 namespace AccountantMVVM
 {
@@ -20,24 +22,9 @@ namespace AccountantMVVM
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly SessionStorage _sessionStorage = SessionStorage.Instance;
-        private Login _loginWindow;
-
         public MainWindow()
         {
-            OpenLoginWindowIfNecessary();
-
             InitializeComponent();
-        }
-
-        private void OpenLoginWindowIfNecessary()
-        {
-            if (_sessionStorage.User == null)
-            {
-                this.Hide();
-                _loginWindow = new Login(this);
-                _loginWindow.Show();
-            }
         }
     }
 }
