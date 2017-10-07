@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountantWPF", "AccountantWPF\AccountantWPF.csproj", "{B7C19010-D0F8-412E-9BEE-64C7545D56FB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALayer", "DALayer\DALayer.csproj", "{E4C18A8D-8FB0-4F21-8785-9B5F8BC20D45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{799178B9-62F6-4802-BF23-3F945D324B0E}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B7C19010-D0F8-412E-9BEE-64C7545D56FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7C19010-D0F8-412E-9BEE-64C7545D56FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7C19010-D0F8-412E-9BEE-64C7545D56FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7C19010-D0F8-412E-9BEE-64C7545D56FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E4C18A8D-8FB0-4F21-8785-9B5F8BC20D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E4C18A8D-8FB0-4F21-8785-9B5F8BC20D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4C18A8D-8FB0-4F21-8785-9B5F8BC20D45}.Release|Any CPU.ActiveCfg = Release|Any CPU

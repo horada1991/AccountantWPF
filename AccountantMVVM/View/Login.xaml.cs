@@ -31,15 +31,15 @@ namespace AccountantMVVM
             LoginUserBtn.IsEnabled = false;
 
             //for testing
-            UserNameInputTB.Text = "Cerianth";
-            var viewModel = (LoginVM)FindResource("UserViewModel");
-            if (viewModel == null)
-            {
-                Console.WriteLine(@"Couldn't get viewmodel when Enter is pressed!");
-                return;
-            }
-            if (viewModel.LoginClicked.CanExecute(null))
-                viewModel.LoginClicked.Execute(null);
+            //UserNameInputTB.Text = "Cerianth";
+            //var viewModel = (LoginVM)FindResource("UserViewModel");
+            //if (viewModel == null)
+            //{
+            //    Console.WriteLine(@"Couldn't get viewmodel when Enter is pressed!");
+            //    return;
+            //}
+            //if (viewModel.LoginClicked.CanExecute(null))
+            //    viewModel.LoginClicked.Execute(null);
         }
 
         private void UserNameInputTB_TextChanged(object sender, TextChangedEventArgs e)

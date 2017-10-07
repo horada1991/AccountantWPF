@@ -46,7 +46,7 @@ namespace AccountantMVVM.Service
             ResponseHelper response = new ResponseHelper();
             if (user.BankRollList?.FirstOrDefault(b => b.Name.Equals(bankRollName)) != null)
             {
-                response.Error.Add($"There' already a bankroll with the given name: {bankRollName}");
+                response.Error.Add($"There's already a bankroll with the given name: {bankRollName}");
                 return response;
             }
 
