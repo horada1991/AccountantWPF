@@ -11,22 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AccountantMVVM.Service;
-using AccountantMVVM.ViewModel;
-using DALayer.Model;
-//using Service;
-//using Service.Helpers;
 
-namespace AccountantMVVM
+namespace AccountantMVVM.View.PopUp
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for MessageWindow.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class MessageWindow : Window
     {
-        public Login()
+        public MessageWindow()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

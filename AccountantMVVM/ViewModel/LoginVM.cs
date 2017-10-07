@@ -27,7 +27,15 @@ namespace AccountantMVVM.ViewModel
             }
         }
 
-        public string InfoMessage => _infoMessage;
+        public string InfoMessage
+        {
+            get { return _infoMessage; }
+            set
+            {
+                _infoMessage = value;
+                OnPropertyChanged("InfoMessage");
+            }            
+        }
 
         #region button clicks
 
@@ -40,7 +48,7 @@ namespace AccountantMVVM.ViewModel
             var response = _userService.LogIn(_user.UserName);
             if (response.User == null)
             {
-                _infoMessage = "Unsuccessful log in!";
+                InfoMessage = "Unsuccessful log in!";
                 return;
             }
             _user = response.User;

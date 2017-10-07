@@ -20,12 +20,15 @@ namespace DALayer.DAO.Implementation
         public void Save(User user)
         {
             _userList = GetAllUser();
-            if (_userList.Count > 0 && _userList.Find(t => t.UserName.Equals(user.UserName)) != null)
+            var userInlist = _userList.Find(t => t.UserName.Equals(user.UserName));
+            if (_userList.Count > 0 && userInlist != null)
             {
-                Debug.WriteLine($"UserName ({user.UserName}) is already in use.. was not saved");
-                return;
+                _userList[_userList.IndexOf(userInlist)] = user;
             }
-            _userList.Add(user);
+            else
+            {
+                _userList.Add(user);
+            }
             _fileStream = new FileStream(Path.Combine(Setting.DataFolderPath, "users.xml"), FileMode.OpenOrCreate, FileAccess.Write);
             _serializerList.Serialize(_fileStream, _userList);
             _fileStream.Close();
@@ -57,6 +60,7 @@ namespace DALayer.DAO.Implementation
                 TimeCreated = DateTime.Now,
                 UserName = userName
             };
+
             Save(user);
 
             return GetUserByUserName(userName);

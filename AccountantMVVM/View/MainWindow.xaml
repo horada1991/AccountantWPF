@@ -11,7 +11,11 @@
         <viewModel:MainVM x:Key="MainViewModel" />
     </Window.Resources>
     <Grid>
-        <TabControl x:Name="TabPanel" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="2,23,2,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="300*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="TabPanel" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="0,0,0,0" Grid.Column="0" Grid.Row="1">
             <TabItem Header="Bankroll">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="Label1" Content="{Binding ActualUser.UserName, Source={StaticResource MainViewModel}}" HorizontalAlignment="Left" Margin="271,52,0,0" VerticalAlignment="Top"/>
@@ -24,10 +28,31 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Menu HorizontalAlignment="Stretch" Height="18" VerticalAlignment="Top" Width="auto">
+        <Menu HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Grid.Row="0">
             <MenuItem Header="File" IsEnabled="false"/>
+            <MenuItem Header="Bankroll" IsEnabled="True">
+                <MenuItem Header="New..." IsEnabled="True" Command="{Binding AddNewBankRollClicked, Mode=OneWay, Source={StaticResource MainViewModel}}"/>
+                <MenuItem Header="Edit..." IsEnabled="false"/>
+                <Separator/>
+                <MenuItem Header="Bankrolls" IsEnabled="false">
+                    <MenuItem Header="Bankroll_1_Template" IsEnabled="false"/>
+                    <MenuItem Header="Bankroll_2_Template" IsEnabled="false"/>
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="Tools" IsEnabled="false"/>
             <MenuItem Header="Help" IsEnabled="false"/>
         </Menu>
+        <!--<Expander ExpandDirection="Left" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" Margin="298,0,0,0" Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+            <Expander.Header>
+                <TextBlock Text="BankRoll">
+                    <TextBlock.LayoutTransform>
+                        <RotateTransform Angle="90"/>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Expander.Header>
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Grid Background="#FFE" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            </Border>
+        </Expander>-->
     </Grid>
 </Window>
